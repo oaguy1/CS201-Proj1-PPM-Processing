@@ -10,7 +10,7 @@
  *  AUTHOR: David N. Robinson
  *  DATE: 09/16/2012
  *  VERSION: 0.1a
- *  LICENSE: BSD 3-clause
+ *  LICENSE: GPLv3
  *******************************************************************/
 
 #ifndef UTILS_PPM
@@ -167,4 +167,39 @@ void deleteBinaryPixel(BinaryPixel pixel);
  */
 BWPixel createBWPixel(int value);
 
+/********************************************************************
+ * FUNCTION: deleteBWPixel(BWPixel pixel)
+ * --------------------------------------
+ *  This function properly de-allocates memory for a specific 
+ *  BWPixel struct passed through the parameter.
+ *
+ *  Here is an example usage, b is a BWPixel:
+ *
+ *      deleteBWPixel(b);
+ */
+void deleteBWPixel(BWPixel pixel);
+
+/********************************************************************
+ * FUNCTION: createHSVPixel(int H, int S, int V)
+ * ----------------------------------
+ *  Function to properly allocate memory for a new HSVPixel data type
+ *  and return the pixel to the calling function.
+ *
+ *  Here is an example usage; i[][] is a 2D array of HSVPixels
+ *
+ *      i[0][0] = createHSVPixel(114);
+ */
+HSVPixel createHSVPixel(int H, int S, int V);
+
+/********************************************************************
+ * FUNCTION: deleteHSVPixel(HSVPixel pixel)
+ * --------------------------------------
+ *  This function properly de-allocates memory for a specific 
+ *  BWPixel struct passed through the parameter.
+ *
+ *  Here is an example usage, b is a BWPixel:
+ *
+ *      deleteBWPixel(b);
+ */
+void deleteHSVPixel(HSVPixel pixel);
 
