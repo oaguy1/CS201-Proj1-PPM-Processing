@@ -39,7 +39,7 @@ struct binarypixel;
 typedef struct binarypixel *BinaryPixel;
 
 /********************************************************************
- * TYPE: ColorPixel
+ * TYPE: BWPixel
  * -----------
  *  Definition of type pixel to store the grey value for a single 
  *  pixel. all grey values will be 0 < i < 255.
@@ -48,7 +48,7 @@ struct bwpixel;
 typedef struct bwpixel *BWPixel;
 
 /********************************************************************
- * TYPE: ColorPixel
+ * TYPE: HSVPixel
  * -----------
  *  Definition of type pixel to store the color value of each pixel.
  *  Each color value is stored as an in 0 < i < 255 for 3 discrete
@@ -59,13 +59,112 @@ struct hsvpixel;
 typedef struct hsvpixel *HSVPixel;
 
 /********************************************************************
+ * TYPE: ColorImage
+ * -----------
+ *  Definition of a struct consisting of a 2D array of ColorPixels.
+ *  The combination of all the pixels creates a full image. This 
+ *  particular struct uses ColorPixels, but others will use different
+ *  pixel types. Also, each ColorImage struct stores the height
+ *  and width value of the full image for easy retreaval
+ */
+struct colorimage;
+typedef struct colorimage *ColorImage;
+
+/********************************************************************
+ * TYPE: BinaryImage
+ * -----------
+ *  Definition of a struct consisting of a 2D array of BinaryPixels.
+ *  The combination of all the pixels creates a full image. This 
+ *  particular struct uses BinaryPixels, but others will use different
+ *  pixel types. Also, each BinaryImage struct stores the height
+ *  and width value of the full image for easy retreaval
+ */
+struct binaryimage;
+typedef struct binaryimage *BinaryImage;
+
+
+/********************************************************************
+ * TYPE: BWImage
+ * -----------
+ *  Definition of a struct consisting of a 2D array of BWPixels.
+ *  The combination of all the pixels creates a full image. This 
+ *  particular struct uses BWPixels, but others will use different
+ *  pixel types. Also, each BWImage struct stores the height
+ *  and width value of the full image for easy retreaval
+ */
+struct bwimage;
+typedef struct bwimage *BWImage;
+
+/********************************************************************
+ * TYPE: HSVImage
+ * -----------
+ *  Definition of a struct consisting of a 2D array of HSVPixels.
+ *  The combination of all the pixels creates a full image. This 
+ *  particular struct uses HSVPixels, but others will use different
+ *  pixel types. Also, each HSVImage struct stores the height
+ *  and width value of the full image for easy retreaval
+ */
+struct hsvimage;
+typedef struct hsvimage *HSVImage;
+
+/********************************************************************
  * FUNCTION: createColorPixel(int R, int G, int B)
  * -----------------------------------------------
  *  Function to properly allocate memory for a new ColorPixel data 
- *  type
+ *  type and return the pixel to the calling function.
  *
  *  Here is an example usage, i[][] is a 2D array of ColorPixels:
  *
  *      i[0][0] = createColorPixel(255, 255, 255);
  */
 ColorPixel createColorPixel(int R, int G, int B);
+
+/********************************************************************
+ * FUNCTION: deleteColorPixel(ColorPixel pixel)
+ * --------------------------------------------
+ *  Function to properly de-allocate the memory of a specific
+ *  ColorPixel struct passed through the parameter
+ *
+ *  Here is an example usage, p is a ColorPixel:
+ *
+ *      deleteColorPixel(p);
+ */
+void deleteColorPixel(ColorPixel pixel);
+
+/********************************************************************
+ * FUNCTION: createBinaryPixel(int value)
+ * --------------------------------------
+ *  Function to properly allocate memory for a new BinaryPixel data
+ *  type and return the pixel to the calling function.
+ *
+ *  Here is an example usage, i[][] is a 2D array of BinaryPixels
+ *
+ *      i[0][0] = createBinaryPixel(0);
+ */
+BinaryPixel createBinaryPixel(int value);
+
+/********************************************************************
+ * FUNCTION: deleteBinaryPixel(BinaryPixel pixel)
+ * ----------------------------------------------
+ *  Function to properly de-allocate memory of a specific 
+ *  BinaryPixel struct passed through the parameter.
+ *
+ *  Here is an example usage, b is a binary pixel:
+ *
+ *      deleteBinaryPixel(b);
+ */
+void deleteBinaryPixel(BinaryPixel pixel);
+
+/********************************************************************
+ * FUNCTION: createBWPixel(int value)
+ * ----------------------------------
+ *  Function to properly allocate memory for a new BWPixel data type
+ *  and return the pixel to the calling function.
+ *
+ *  Here is an example usage; i[][] is a 2D array of BWPixels
+ *
+ *      i[0][0] = createBWPixel(114);
+ */
+BWPixel createBWPixel(int value);
+
+
