@@ -163,6 +163,24 @@ ColorImage createColorImage(int height, int width) {
 
 }
 
+void deleteColorImage(ColorImage image) {
+
+  int i;
+  int j;
+  int height = image->height;
+  int width = image->width;
+
+  // iterate through the pixel array and release each pixel
+  for(i = 0; i < height; i++) {
+    for(j = 0; j < width; j++) {
+      deleteColorPixel(image->image[i, j]);
+    }
+  }
+
+  free(image);
+}
+
+
 BinaryImage createBinaryImage(int height, int width) {
 
  BinaryImage image = (BinaryImage) malloc(sizeof(struct binaryimage));
