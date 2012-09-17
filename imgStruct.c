@@ -5,6 +5,7 @@
  *  imgStruct.h
  */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include "imgStruct.h"
 
@@ -55,3 +56,78 @@ struct hsvimage {
   int height;
   int width;
 };
+
+ColorPixel createColorPixel(int red, int green, int blue) {
+
+  ColorPixel pixel = (ColorPixel) malloc(sizeof(struct colorpixel));
+
+  if (pixel == NULL) {
+    printf("Out of memory!\n");
+    exit(1);
+  }
+
+  pixel->R = red;
+  pixel->G = green;
+  pixel->B = blue;
+
+  return pixel;
+
+}
+
+BinaryPixel createBinaryPixel(int value) {
+
+  BinaryPixel pixel = (BinaryPixel) malloc(sizeof(struct binarypixel));
+
+  if (pixel == NULL) {
+    printf("Out of memory!\n");
+    exit(1);
+  }
+
+  pixel->value = value;
+
+  return pixel;
+
+}
+
+BWPixel createBWPixel(int value) {
+
+  BWPixel pixel = (BWPixel) malloc(sizeof(struct bwpixel));
+
+  if (pixel == NULL) {
+    printf("Out of memory!\n");
+    exit(1);
+  }
+
+  pixel->value = value;
+
+  return pixel;
+
+}
+
+HSVPixel createHSVPixel(int hue, int sat, int value) {
+
+  HSVPixel pixel = (HSVPixel) malloc(sizeof(struct hsvpixel));
+
+  if (pixel == NULL) {
+    printf("Out of memory!\n");
+    exit(1);
+  }
+
+  pixel->H = hue;
+  pixel->S = sat;
+  pixel->V = value;
+
+  return pixel;
+
+}
+
+
+
+
+
+
+
+
+
+
+
