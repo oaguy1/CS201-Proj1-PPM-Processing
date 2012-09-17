@@ -117,7 +117,7 @@ typedef struct hsvimage *HSVImage;
  *
  *      i[0][0] = createColorPixel(255, 255, 255);
  */
-ColorPixel createColorPixel(int R, int G, int B);
+ColorPixel createColorPixel(int red, int green, int blue);
 
 /********************************************************************
  * FUNCTION: deleteColorPixel(ColorPixel pixel)
