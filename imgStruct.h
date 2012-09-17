@@ -299,3 +299,4 @@ HSVImage createHSVImage();
  */
 void deleteHSVImage(HSVImage image);
 
+#endif
