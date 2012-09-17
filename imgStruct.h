@@ -213,7 +213,7 @@ void deleteHSVPixel(HSVPixel pixel);
  *
  *      input = createColorImage();
  */
-ColorImage createColorImage();
+ColorImage createColorImage(int height, int width);
 
 /********************************************************************
  * FUNCTION: deleteColorImage(ColorImage image)
@@ -237,7 +237,7 @@ void deleteColorImage(ColorImage image);
  *
  *      input = createBinaryImage();
  */
-BinaryImage createBinaryImage();
+BinaryImage createBinaryImage(int height, int width);
 
 /********************************************************************
  * FUNCTION: deleteBinaryImage(ColorImage image)
@@ -261,7 +261,7 @@ void deleteBinaryImage(BinaryImage image);
  *
  *      input = createBWImage();
  */
-BWImage createBWImage();
+BWImage createBWImage(int height, int width);
 
 /********************************************************************
  * FUNCTION: deleteBWImage(BWImage image)
@@ -285,7 +285,7 @@ void deleteBWImage(BWImage image);
  *
  *      input = createHSVImage();
  */
-HSVImage createHSVImage();
+HSVImage createHSVImage(int height, int width);
 
 /********************************************************************
  * FUNCTION: deleteHSVImage(HSVImage image)
