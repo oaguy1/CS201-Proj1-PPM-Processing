@@ -189,7 +189,7 @@ void deleteBWPixel(BWPixel pixel);
  *
  *      i[0][0] = createHSVPixel(114);
  */
-HSVPixel createHSVPixel(int H, int S, int V);
+HSVPixel createHSVPixel(int hue, int sat, int value);
 
 /********************************************************************
  * FUNCTION: deleteHSVPixel(HSVPixel pixel)
