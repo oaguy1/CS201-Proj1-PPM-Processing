@@ -162,3 +162,58 @@ ColorImage createColorImage(int height, int width) {
  image->width = width;
 
 }
+
+BinaryImage createBinaryImage(int height, int width) {
+
+ BinaryImage image = (BinaryImage) malloc(sizeof(struct binaryimage));
+
+ if (image == NULL) {
+   printf("Out of memory!\n");
+   exit(1);
+ }
+
+ // Rather than create the array, I am allocating the place in memory
+ // for the image array, which will be populated during the parsing
+ // process
+ image->image = (BinaryPixel*) malloc(height*width*sizeof(struct binarypixel));
+ image->height = height;
+ image->width = width;
+
+}
+
+BWImage createBWImage(int height, int width) {
+
+ BWImage image = (BWImage) malloc(sizeof(struct bwimage));
+
+ if (image == NULL) {
+   printf("Out of memory!\n");
+   exit(1);
+ }
+
+ // Rather than create the array, I am allocating the place in memory
+ // for the image array, which will be populated during the parsing
+ // process
+ image->image = (BWPixel*) malloc(height*width*sizeof(struct bwpixel));
+ image->height = height;
+ image->width = width;
+
+}
+
+HSVImage createHSVImage(int height, int width) {
+
+ HSVImage image = (HSVImage) malloc(sizeof(struct hsvimage));
+
+ if (image == NULL) {
+   printf("Out of memory!\n");
+   exit(1);
+ }
+
+ // Rather than create the array, I am allocating the place in memory
+ // for the image array, which will be populated during the parsing
+ // process
+ image->image = (HSVPixel*) malloc(height*width*sizeof(struct hsvpixel));
+ image->height = height;
+ image->width = width;
+
+}
+
