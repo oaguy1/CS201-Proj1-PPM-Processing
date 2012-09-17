@@ -145,11 +145,20 @@ void deleteHSVPixel(HSVPixel pixel) {
 
 }
 
+ColorImage createColorImage(int height, int width) {
 
+ ColorImage image = (ColorImage) malloc(sizeof(struct colorimage));
 
+ if (image == NULL) {
+   printf("Out of memory!\n");
+   exit(1);
+ }
 
+ // Rather than create the array, I am allocating the place in memory
+ // for the image array, which will be populated during the parsing
+ // process
+ image->image = (ColorPixel*) malloc(height*width*sizeof(struct colorpixel));
+ image->height = height;
+ image->width = width;
 
-
-
-
-
+}
