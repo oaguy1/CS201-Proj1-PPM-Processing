@@ -74,6 +74,12 @@ ColorPixel createColorPixel(int red, int green, int blue) {
 
 }
 
+void deleteColorPixel(ColorPixel pixel) {
+  
+  free(pixel);
+
+}
+
 BinaryPixel createBinaryPixel(int value) {
 
   BinaryPixel pixel = (BinaryPixel) malloc(sizeof(struct binarypixel));
@@ -89,6 +95,12 @@ BinaryPixel createBinaryPixel(int value) {
 
 }
 
+void deleteBinaryPixel(BinaryPixel pixel) {
+  
+  free(pixel);
+
+}
+
 BWPixel createBWPixel(int value) {
 
   BWPixel pixel = (BWPixel) malloc(sizeof(struct bwpixel));
@@ -101,6 +113,12 @@ BWPixel createBWPixel(int value) {
   pixel->value = value;
 
   return pixel;
+
+}
+
+void deleteBWPixel(BWPixel pixel) {
+  
+  free(pixel);
 
 }
 
@@ -121,7 +139,11 @@ HSVPixel createHSVPixel(int hue, int sat, int value) {
 
 }
 
+void deleteHSVPixel(HSVPixel pixel) {
+  
+  free(pixel);
 
+}
 
 
 
